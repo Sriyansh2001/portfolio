@@ -20,8 +20,6 @@ const data = {
 const Skills: React.FC = () => {
   return (
     <section className="skills-section">
-      <h2 className="skills-title">Skills & Expertise</h2>
-
       <div className="skills-grid">
         {Object.entries(data).map(([category, items]) => (
           <Card className="skills-card" key={category} title={category}>
