@@ -1,0 +1,44 @@
+@use "styles/variables" as *;
+
+.skills-section {
+  padding: 32px;
+  color: $text-color;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.skills-title {
+  margin: 0 0 20px 8px;
+  font-size: 28px;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+@import "../Common/card.scss";
+
+.skills-card .skill-pill {
+  background: $pill-bg;
+  color: $text-color;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.skills-card .skill-pill:hover {
+  transform: translateY(-3px);
+  background: $pill-hover-bg;
+}
+
+@media (max-width: 600px) {
+  .skills-section { padding: 20px; }
+  .skills-title { font-size: 22px; }
+}

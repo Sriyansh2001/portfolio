@@ -1,67 +1,92 @@
 import React from "react";
 import { BsFileCode } from "react-icons/bs";
+import { FaRegFileLines } from "react-icons/fa6";
+import { IoFileTrayFull } from "react-icons/io5";
+import { GiSkills } from "react-icons/gi";
+import { PiProjectorScreenChartDuotone } from "react-icons/pi";
+import { GiSnakeTotem } from "react-icons/gi";
+import { FcAbout } from "react-icons/fc";
+import { IoIosColorPalette } from "react-icons/io";
+import { IoTerminal } from "react-icons/io5";
+import { GrUserExpert } from "react-icons/gr";
+
 import "./desktop.scss";
 import MovingModal from "components/Common/MovingModal";
+import { useTaskContext } from "context/TaskContext";
+import { DESKTOP_ICONS } from "constants/constants";
+import Skills from "components/Skills/Skills";
 
 const Desktop: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const { tasks, setDesktopIcon, setModalZIndex } = useTaskContext();
+
+  const handleOpenAppClick =
+    (iconType: (typeof DESKTOP_ICONS)[keyof typeof DESKTOP_ICONS])=> {
+      setDesktopIcon(iconType, true);
+    };
+
+  const handleCloseAppClick =
+    (iconType: (typeof DESKTOP_ICONS)[keyof typeof DESKTOP_ICONS]) => {
+      setDesktopIcon(iconType, false);
+    };
+
+  const handleModalMouseDown = (iconId: string) => {
+    setModalZIndex(iconId);
+  };
+
+  console.log(tasks);
 
   const DESKTOP_APPS = [
     {
       name: "Code Editor",
+      id: DESKTOP_ICONS.CODE_EDITOR,
       icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
     },
-     {
+    {
       name: "Resume",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.RESUME,
+      icon: FaRegFileLines,
     },
-     {
+    {
       name: "File Manager",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.FILE_MANAGER,
+      icon: IoFileTrayFull,
     },
-     {
+    {
       name: "Skills",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.SKILLS,
+      icon: GiSkills,
+      component: Skills
     },
     {
       name: "Projects",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
-    },
-    {
-      name: "Projects",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.PROJECTS,
+      icon: PiProjectorScreenChartDuotone,
     },
     {
       name: "Experience",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.EXPERIENCE,
+      icon: GrUserExpert,
     },
     {
       name: "Snake",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.SNAKE,
+      icon: GiSnakeTotem,
     },
     {
       name: "About",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.ABOUT,
+      icon: FcAbout,
     },
     {
       name: "Themes",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
+      id: DESKTOP_ICONS.THEMES,
+      icon: IoIosColorPalette,
     },
     {
       name: "Terminal",
-      icon: BsFileCode,
-      onClick: () => alert("Code Editor clicked!"),
-    }
+      id: DESKTOP_ICONS.TERMINAL,
+      icon: IoTerminal,
+    },
   ];
 
   return (
@@ -70,20 +95,33 @@ const Desktop: React.FC = () => {
         const Icon = app.icon;
 
         return (
-          <div key={index} className="desktop-app" onClick={app.onClick}>
-            <Icon size={40} />
-            <div className="desktop-app-name">{app.name}</div>
-          </div>
+          <>
+            <div
+              key={index}
+              className="desktop-app"
+              onClick={() => {
+                handleOpenAppClick(app.id);
+              }}
+            >
+              <Icon size={40} />
+              <div className="desktop-app-name">{app.name}</div>
+            </div>
+            <MovingModal
+              title={app.name}
+              open={tasks[app.id].isOpen}
+              onClose={() => {
+                handleCloseAppClick(app.id);
+              }}
+              onMouseDown={() => handleModalMouseDown(app.id)}
+              zIndex={tasks[app.id].zIndex}
+              width={400}
+              defaultPosition={{ x: -200, y: 0 }}
+            >
+              {app.component ? <app.component /> : "check"}
+            </MovingModal>
+          </>
         );
       })}
-      <button onClick={() => {setIsModalOpen(true)}}>Check</button>
-      <MovingModal
-        title="Users"
-        open={isModalOpen}
-        onClose={() => {setIsModalOpen(false)}}
-        width={400}
-        defaultPosition={{ x: -200, y: 0 }}
-      >check</MovingModal>
     </div>
   );
 };

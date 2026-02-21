@@ -1,0 +1,54 @@
+@use "styles/variables" as *;
+
+:root {
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+
+  --scrollbar-track: #{$scrollbar-track};
+  --scrollbar-thumb-start: #{$scrollbar-thumb-start};
+  --scrollbar-thumb-end: #{$scrollbar-thumb-end};
+  --scrollbar-thumb-border: #{$scrollbar-thumb-border};
+}
+
+/* Basic page styles (moved from index.css) */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Global scrollbar styling using CSS variables */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--scrollbar-thumb-start), var(--scrollbar-thumb-end));
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-thumb-border);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.06);
+}
+
+/* Firefox */
+* {
+  scrollbar-color: var(--scrollbar-thumb-start) var(--scrollbar-track);
+  scrollbar-width: thin;
+}

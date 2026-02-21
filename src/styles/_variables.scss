@@ -1,3 +1,24 @@
 $background-color: #111010;
 $text-color: #ffffff;
 $border-radius: 8px;
+
+// Card & UI colors
+$accent-gradient-start: #6EE7B7;
+$accent-gradient-end: #3B82F6;
+
+$card-gradient-start: rgba(255,255,255,0.02);
+$card-gradient-end: rgba(255,255,255,0.01);
+$card-border-color: rgba(255,255,255,0.06);
+
+$card-shadow: 0 6px 18px rgba(0,0,0,0.5);
+$card-hover-shadow: 0 14px 32px rgba(0,0,0,0.6);
+
+// Scrollbar
+$scrollbar-track: rgba(0,0,0,0.28);
+$scrollbar-thumb-start: #3b3b3b;
+$scrollbar-thumb-end: #1f1f1f;
+$scrollbar-thumb-border: rgba(0,0,0,0.22);
+
+// Pills
+$pill-bg: rgba(255,255,255,0.04);
+$pill-hover-bg: rgba(255,255,255,0.06);

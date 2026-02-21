@@ -9,6 +9,8 @@ interface MovingModalProps {
   children: React.ReactNode;
   width?: number;
   defaultPosition?: { x: number; y: number };
+  zIndex?: number;
+  onMouseDown?: () => void;
 }
 
 const MovingModal: React.FC<MovingModalProps> = ({
@@ -18,6 +20,8 @@ const MovingModal: React.FC<MovingModalProps> = ({
   children,
   width = 320,
   defaultPosition = { x: 0, y: 0 },
+  zIndex = 1,
+  onMouseDown,
 }) => {
   const [position, setPosition] = useState(defaultPosition);
   const dragging = useRef(false);
@@ -54,16 +58,21 @@ const MovingModal: React.FC<MovingModalProps> = ({
   }, []);
 
   return (
-    <Dialog.Root open={open} onOpenChange={onClose}>
+    <Dialog.Root modal={false}  open={open} onOpenChange={onClose}>
       <Dialog.Portal>
         <Dialog.Overlay className="window-overlay" />
 
         <Dialog.Content
           onPointerDownOutside={(e) => e.preventDefault()}
           onEscapeKeyDown={(e) => e.preventDefault()}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+          onFocusOutside={(e) => e.preventDefault()}
+          onInteractOutside={(e) => e.preventDefault()}
+          onMouseDown={onMouseDown}
           className="window-modal"
           style={{
             width,
+            zIndex,
             transform: `translate(${position.x}px, ${position.y}px)`,
           }}
         >
