@@ -1,0 +1,49 @@
+.window-overlay {
+  position: fixed;
+  inset: 0;
+}
+
+.window-modal {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Windows-style title bar */
+.window-titlebar {
+  background: linear-gradient(#2a2a2a, #1f1f1f);
+  padding: 8px 12px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.window-titlebar:active {
+  cursor: grabbing;
+}
+
+.window-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.window-close:hover {
+  color: #ff5f57;
+}
+
+.window-body {
+  padding: 16px;
+  background: #252526;
+}
