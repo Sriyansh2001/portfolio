@@ -14,6 +14,29 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   user-select: none;
+  width: 700px;
+  max-height: calc(100vh - 140px);
+}
+
+/* Mobile/responsive view */
+@media (max-width: 768px) {
+  .window-modal {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .window-modal {
+    width: calc(100vw - 40px);
+    margin-left: 20px;
+  }
 }
 
 /* Windows-style title bar */
@@ -46,4 +69,6 @@
 .window-body {
   padding: 16px;
   background: #252526;
+  overflow-y: auto;
+  max-height: calc(100% - 44px);
 }

@@ -5,7 +5,7 @@ import Desktop from "components/Desktop/Desktop";
 
 const Home: React.FC = () => {
   return (
-    <div className="home-main">
+    <div className="home-main" style={{ backgroundImage: "url(/images/background.jpg)" }}>
       <Header />
       <Desktop />
     </div>

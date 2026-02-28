@@ -1,0 +1,13 @@
+@use "styles/variables" as *;
+
+.resume-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.download-link {
+    text-decoration: none;
+    color: #{$button-color};
+}

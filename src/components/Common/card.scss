@@ -6,7 +6,7 @@
   border-radius: 12px;
   padding: 16px;
   box-shadow: $card-shadow;
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition: box-shadow 200ms ease;
   backdrop-filter: blur(6px);
   display: flex;
   flex-direction: column;
@@ -14,7 +14,6 @@
 }
 
 .card:hover {
-  transform: translateY(-6px);
   box-shadow: $card-hover-shadow;
 }
 

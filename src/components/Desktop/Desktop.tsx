@@ -15,6 +15,8 @@ import MovingModal from "components/Common/MovingModal";
 import { useTaskContext } from "context/TaskContext";
 import { DESKTOP_ICONS } from "constants/constants";
 import Skills from "components/Skills/Skills";
+import Resume from "components/Resume/Resume";
+import Project from "components/Project/Project";
 
 const Desktop: React.FC = () => {
   const { tasks, setDesktopIcon, setModalZIndex } = useTaskContext();
@@ -45,6 +47,7 @@ const Desktop: React.FC = () => {
       name: "Resume",
       id: DESKTOP_ICONS.RESUME,
       icon: FaRegFileLines,
+      component: Resume
     },
     {
       name: "File Manager",
@@ -61,6 +64,9 @@ const Desktop: React.FC = () => {
       name: "Projects",
       id: DESKTOP_ICONS.PROJECTS,
       icon: PiProjectorScreenChartDuotone,
+      component: Project,
+      width: 700,
+      defaultPosition: { x: -400, y: 0 }
     },
     {
       name: "Experience",
@@ -114,8 +120,8 @@ const Desktop: React.FC = () => {
               }}
               onMouseDown={() => handleModalMouseDown(app.id)}
               zIndex={tasks[app.id].zIndex}
-              width={400}
-              defaultPosition={{ x: -200, y: 0 }}
+              width={app.width || 400}
+              defaultPosition={{ x: app.defaultPosition?.x || -200, y: app.defaultPosition?.y || 0 }}
             >
               {app.component ? <app.component /> : "check"}
             </MovingModal>

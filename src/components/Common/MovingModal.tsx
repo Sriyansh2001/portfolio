@@ -18,7 +18,7 @@ const MovingModal: React.FC<MovingModalProps> = ({
   onClose,
   title,
   children,
-  width = 320,
+  width = 700,
   defaultPosition = { x: 0, y: 0 },
   zIndex = 1,
   onMouseDown,
