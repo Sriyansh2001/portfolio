@@ -124,7 +124,6 @@ export default function Terminal() {
 
   const onSubmit = (e?: React.FormEvent) => {
     e?.preventDefault();
-    console.log("Submitting command:", input);
     handleCommand(input);
     setInput("");
   };
@@ -148,14 +147,11 @@ export default function Terminal() {
           ref={inputRef}
           className="terminal-input"
           value={input}
-          onChange={(e) => {console.log("Input changed:", e.target.value); setInput(e.target.value)}}
+          onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
             if(e.key === "Enter") {
               onSubmit();
             }
-            if(e.key === "Backspace") {
-                console.log("Backspace pressed ");
-            } 
             if (e.key === "ArrowUp") {
               // optional: recall last command
               const lastInput = history
