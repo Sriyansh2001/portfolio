@@ -1,12 +1,13 @@
 import React from "react";
-import { BsFileCode } from "react-icons/bs";
+// import { BsFileCode } from "react-icons/bs";
 import { FaRegFileLines } from "react-icons/fa6";
-import { IoFileTrayFull } from "react-icons/io5";
+// import { IoFileTrayFull } from "react-icons/io5";
 import { GiSkills } from "react-icons/gi";
 import { PiProjectorScreenChartDuotone } from "react-icons/pi";
-import { GiSnakeTotem } from "react-icons/gi";
-import { FcAbout } from "react-icons/fc";
-import { IoIosColorPalette } from "react-icons/io";
+// import { GiSnakeTotem } from "react-icons/gi";
+// import { FcAbout } from "react-icons/fc";
+// import { IoIosColorPalette } from "react-icons/io";
+import { FaCalculator } from "react-icons/fa";
 import { IoTerminal } from "react-icons/io5";
 import { GrUserExpert } from "react-icons/gr";
 
@@ -17,6 +18,8 @@ import { DESKTOP_ICONS } from "constants/constants";
 import Skills from "components/Skills/Skills";
 import Resume from "components/Resume/Resume";
 import Project from "components/Project/Project";
+import Experience from "components/Experience/Experience";
+import Calculator from "components/Calculator/Calculator";
 
 const Desktop: React.FC = () => {
   const { tasks, setDesktopIcon, setModalZIndex } = useTaskContext();
@@ -38,27 +41,33 @@ const Desktop: React.FC = () => {
   console.log(tasks);
 
   const DESKTOP_APPS = [
-    {
-      name: "Code Editor",
-      id: DESKTOP_ICONS.CODE_EDITOR,
-      icon: BsFileCode,
-    },
+    // {
+    //   name: "Code Editor",
+    //   id: DESKTOP_ICONS.CODE_EDITOR,
+    //   icon: BsFileCode,
+    // },
     {
       name: "Resume",
       id: DESKTOP_ICONS.RESUME,
       icon: FaRegFileLines,
       component: Resume
     },
-    {
-      name: "File Manager",
-      id: DESKTOP_ICONS.FILE_MANAGER,
-      icon: IoFileTrayFull,
-    },
+    // {
+    //   name: "File Manager",
+    //   id: DESKTOP_ICONS.FILE_MANAGER,
+    //   icon: IoFileTrayFull,
+    // },
     {
       name: "Skills",
       id: DESKTOP_ICONS.SKILLS,
       icon: GiSkills,
       component: Skills
+    },
+    {
+      name: "Calculator",
+      id: DESKTOP_ICONS.CALCULATOR,
+      icon: FaCalculator,
+      component: Calculator
     },
     {
       name: "Projects",
@@ -72,22 +81,24 @@ const Desktop: React.FC = () => {
       name: "Experience",
       id: DESKTOP_ICONS.EXPERIENCE,
       icon: GrUserExpert,
+      width: 700,
+      component: Experience
     },
-    {
-      name: "Snake",
-      id: DESKTOP_ICONS.SNAKE,
-      icon: GiSnakeTotem,
-    },
-    {
-      name: "About",
-      id: DESKTOP_ICONS.ABOUT,
-      icon: FcAbout,
-    },
-    {
-      name: "Themes",
-      id: DESKTOP_ICONS.THEMES,
-      icon: IoIosColorPalette,
-    },
+    // {
+    //   name: "Snake",
+    //   id: DESKTOP_ICONS.SNAKE,
+    //   icon: GiSnakeTotem,
+    // },
+    // {
+    //   name: "About",
+    //   id: DESKTOP_ICONS.ABOUT,
+    //   icon: FcAbout,
+    // },
+    // {
+    //   name: "Themes",
+    //   id: DESKTOP_ICONS.THEMES,
+    //   icon: IoIosColorPalette,
+    // },
     {
       name: "Terminal",
       id: DESKTOP_ICONS.TERMINAL,

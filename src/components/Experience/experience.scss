@@ -1,0 +1,202 @@
+@use "styles/variables" as *;
+
+.experience-section {
+  width: 100%;
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+
+  // Vertical line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      $accent-gradient-start 0%,
+      $accent-gradient-end 100%
+    );
+  }
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 80px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    $accent-gradient-start 0%,
+    $accent-gradient-end 100%
+  );
+  border: 3px solid $background-color;
+  box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: '✓';
+    color: $background-color;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .experience-item:hover & {
+    box-shadow: 0 0 20px rgba(110, 231, 183, 0.3), 0 0 0 4px rgba(110, 231, 183, 0.1);
+    transform: scale(1.1);
+  }
+}
+
+.experience-content {
+  background: linear-gradient(
+    135deg,
+    $card-gradient-start 0%,
+    $card-gradient-end 100%
+  );
+  border: 1px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 24px;
+  box-shadow: $card-shadow;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: $card-hover-shadow;
+    border-color: rgba(110, 231, 183, 0.2);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  }
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.position-company {
+  flex: 1;
+}
+
+.position {
+  font-size: 18px;
+  font-weight: 700;
+  color: $text-color;
+  margin: 0 0 4px 0;
+  background: linear-gradient(
+    135deg,
+    $accent-gradient-start 0%,
+    $accent-gradient-end 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba($text-color, 0.7);
+  margin: 0;
+}
+
+.duration {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(110, 231, 183, 0.8);
+  background: rgba(110, 231, 183, 0.1);
+  border: 1px solid rgba(110, 231, 183, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba($text-color, 0.85);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: $accent-gradient-start;
+      font-weight: bold;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .experience-item {
+    padding-left: 60px;
+  }
+
+  .timeline-dot {
+    width: 40px;
+    height: 40px;
+    left: -4px;
+
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .position {
+    font-size: 16px;
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .achievements li {
+    font-size: 13px;
+  }
+}

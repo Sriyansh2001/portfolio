@@ -10,6 +10,7 @@ export const DESKTOP_ICONS = {
     TERMINAL: "terminal",
     SKILLS: "skills",
     CONTACT: "contact",
+    CALCULATOR: "calculator"
 }
 
 export const resumeLink =

@@ -1,0 +1,235 @@
+@use "styles/variables" as *;
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: $border-radius;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.operation-indicator {
+  min-height: 18px;
+  font-size: 12px;
+  color: rgba($text-color, 0.75);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding-right: 6px;
+  opacity: 0.95;
+}
+
+.calculator-display {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+  border: 1px solid $card-border-color;
+  border-radius: $border-radius;
+  padding: 20px 16px;
+  text-align: right;
+  font-size: 32px;
+  font-weight: 700;
+  color: $text-color;
+  word-wrap: break-word;
+  word-break: break-all;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+
+  // Scrollable for long numbers
+  overflow-x: auto;
+  
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(110, 231, 183, 0.3);
+    border-radius: 2px;
+
+    &:hover {
+      background: rgba(110, 231, 183, 0.5);
+    }
+  }
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.calculator-btn {
+  padding: 16px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+  color: $text-color;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+
+  // Hover effect
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.06)
+    );
+    border-color: rgba(110, 231, 183, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  // Active/pressed state
+  &:active {
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  // Number buttons
+  &.btn-number {
+    color: $text-color;
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.08)
+      );
+    }
+  }
+
+  // Operation buttons
+  &.btn-operation {
+    color: $accent-gradient-start;
+    border-color: rgba(110, 231, 183, 0.2);
+    background: linear-gradient(
+      135deg,
+      rgba(110, 231, 183, 0.08),
+      rgba(110, 231, 183, 0.04)
+    );
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(110, 231, 183, 0.15),
+        rgba(110, 231, 183, 0.1)
+      );
+      border-color: rgba(110, 231, 183, 0.4);
+      color: #6EE7B7;
+      text-shadow: 0 0 8px rgba(110, 231, 183, 0.5);
+    }
+  }
+
+  // Equals button
+  &.btn-equals {
+    background: linear-gradient(
+      135deg,
+      $accent-gradient-start,
+      $accent-gradient-end
+    );
+    color: $background-color;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(110, 231, 183, 0.3);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  // Clear button
+  &.btn-clear {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 107, 0.15),
+      rgba(255, 107, 107, 0.08)
+    );
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.2);
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 107, 107, 0.25),
+        rgba(255, 107, 107, 0.15)
+      );
+      border-color: rgba(255, 107, 107, 0.4);
+      text-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+    }
+  }
+
+  // Backspace button
+  &.btn-backspace {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 193, 107, 0.15),
+      rgba(255, 193, 107, 0.08)
+    );
+    color: #ffc16b;
+    border-color: rgba(255, 193, 107, 0.2);
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 193, 107, 0.25),
+        rgba(255, 193, 107, 0.15)
+      );
+      border-color: rgba(255, 193, 107, 0.4);
+      text-shadow: 0 0 8px rgba(255, 193, 107, 0.5);
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 600px) {
+  .calculator-container {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .calculator-display {
+    font-size: 24px;
+    padding: 16px 12px;
+    min-height: 50px;
+  }
+
+  .calculator-btn {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .calculator-buttons {
+    gap: 6px;
+  }
+}
+
+// Accessibility - focus state
+.calculator-btn:focus-visible {
+  outline: 2px solid $accent-gradient-start;
+  outline-offset: 2px;
+}
