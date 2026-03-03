@@ -20,6 +20,7 @@ import Resume from "components/Resume/Resume";
 import Project from "components/Project/Project";
 import Experience from "components/Experience/Experience";
 import Calculator from "components/Calculator/Calculator";
+import Terminal from "components/Terminal/Terminal";
 
 const Desktop: React.FC = () => {
   const { tasks, setDesktopIcon, setModalZIndex } = useTaskContext();
@@ -103,6 +104,8 @@ const Desktop: React.FC = () => {
       name: "Terminal",
       id: DESKTOP_ICONS.TERMINAL,
       icon: IoTerminal,
+      width: 700,
+      component: Terminal,
     },
   ];
 

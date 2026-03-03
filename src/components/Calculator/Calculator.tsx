@@ -91,54 +91,6 @@ export default function Calculator() {
     }
   };
 
-  // Keyboard support
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      const key = e.key;
-
-      // Number keys
-      if (/^[0-9]$/.test(key)) {
-        e.preventDefault();
-        handleNumberClick(key);
-      }
-      // Decimal point
-      else if (key === '.') {
-        e.preventDefault();
-        handleDecimal();
-      }
-      // Operations
-      else if (key === '+' || key === '-') {
-        e.preventDefault();
-        handleOperation(key);
-      }
-      else if (key === '*') {
-        e.preventDefault();
-        handleOperation('*');
-      }
-      else if (key === '/') {
-        e.preventDefault();
-        handleOperation('/');
-      }
-      // Equals
-      else if (key === 'Enter' || key === '=') {
-        e.preventDefault();
-        handleEquals();
-      }
-      // Clear
-      else if (key === 'Backspace') {
-        e.preventDefault();
-        handleBackspace();
-      }
-      else if (key === 'Delete') {
-        e.preventDefault();
-        handleClear();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [display, previousValue, operation]);
-
   const buttons = [
     { label: 'C', onClick: handleClear, className: 'btn-clear' },
     { label: '←', onClick: handleBackspace, className: 'btn-backspace' },

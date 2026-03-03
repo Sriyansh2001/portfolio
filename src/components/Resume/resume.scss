@@ -11,3 +11,38 @@
     text-decoration: none;
     color: #{$button-color};
 }
+
+.resume-frame-wrapper {
+    position: relative;
+}
+
+.iframe-loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 2;
+    background: rgba(0,0,0,0.45);
+    border-radius: $border-radius;
+    padding: 12px;
+}
+
+.iframe-loader .loader-text {
+    color: $text-color;
+    font-size: 14px;
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.12);
+    border-top-color: $accent-gradient-start;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
