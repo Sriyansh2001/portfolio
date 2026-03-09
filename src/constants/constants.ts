@@ -41,3 +41,11 @@ export const TERMINAL_COMMANDS = {
   HELP: 'help',
   CLEAR: 'clear',
 };
+
+export const WIDTH_BREAKPOINTS = {
+  MOBILE: 480,
+  TABLET: 768,
+  LAPTOP: 1024,
+  DESKTOP: 1280,
+  LARGE_DESKTOP: 1536,
+}

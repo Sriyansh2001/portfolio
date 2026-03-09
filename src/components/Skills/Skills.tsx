@@ -17,7 +17,7 @@ const data = {
   "Tools & Technologies": ["Git & GitHub"],
 };
 
-const Skills: React.FC = () => {
+const   Skills: React.FC = () => {
   return (
     <section className="skills-section">
       <div className="skills-grid">

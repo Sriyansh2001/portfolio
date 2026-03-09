@@ -1,27 +1,65 @@
 @use "styles/variables" as *;
 
 .header-main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
-    padding: 20px;
-    color: $text-color;
-    font-family: 'Irish Grover', cursive;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  color: $text-color;
+  font-family: "Irish Grover", cursive;
 }
 
 .mid-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .last-box {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .social-icon {
-    padding: 0 10px;
-    cursor: pointer;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+// tablet and below
+
+@media (max-width: $tablet) {
+  .header-main {
+    gap: 10px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .social-icon {
+    padding: 0 6px;
+  }
+}
+
+
+// Mobile and below
+
+@media (max-width: $mobile) {
+  .header-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .mid-box {
+    order: 3;
+  }
+
+  .last-box {
+    justify-content: center;
+  }
+
+  .social-icon {
+    padding: 0 8px;
+  }
 }

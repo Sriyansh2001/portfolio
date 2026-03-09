@@ -25,8 +25,7 @@ export default function Resume() {
 
         <iframe
           src={resumeLink}
-          width="100%"
-          height={"350px"}
+          className="pdf-iframe"
           title="Resume PDF"
           style={{ border: "none" }}
           onLoad={() => setLoading(false)}

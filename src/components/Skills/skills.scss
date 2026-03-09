@@ -31,7 +31,18 @@
   background: $pill-hover-bg;
 }
 
-@media (max-width: 600px) {
-  .skills-section { padding: 20px; }
-  .skills-title { font-size: 22px; }
+@media (max-width: $tablet) {
+  .skills-section {
+    padding: 20px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .skills-title {
+    font-size: 22px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }

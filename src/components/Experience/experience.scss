@@ -167,25 +167,75 @@
   }
 }
 
-// Responsive design
-@media (max-width: 768px) {
+// // Responsive design
+// @media (max-width: 768px) {
+//   .experience-item {
+//     padding-left: 60px;
+//   }
+
+//   .timeline-dot {
+//     width: 40px;
+//     height: 40px;
+//     left: -4px;
+
+//     &::after {
+//       font-size: 20px;
+//     }
+//   }
+
+//   .experience-header {
+//     flex-direction: column;
+//     gap: 8px;
+//   }
+
+//   .position {
+//     font-size: 16px;
+//   }
+
+//   .company {
+//     font-size: 14px;
+//   }
+
+//   .achievements li {
+//     font-size: 13px;
+//   }
+// }
+
+/* =========================
+   Tablet View
+========================= */
+
+@media (max-width: $tablet) {
+
+  .experience-section {
+    max-height: none;
+    overflow: visible;
+    padding: 0px;
+    margin: 0 auto;
+  }
+
   .experience-item {
-    padding-left: 60px;
+    padding-left: 64px;
   }
 
   .timeline-dot {
     width: 40px;
     height: 40px;
-    left: -4px;
+    left: 0;
 
     &::after {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
   .experience-header {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .duration {
+    align-self: flex-start;
   }
 
   .position {
@@ -198,5 +248,54 @@
 
   .achievements li {
     font-size: 13px;
+  }
+}
+
+
+/* =========================
+   Mobile View
+========================= */
+
+@media (max-width: $mobile) {
+
+  .experience-timeline::before {
+    left: 18px;
+  }
+
+  .experience-item {
+    padding-left: 52px;
+    margin-bottom: 28px;
+  }
+
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    left: 2px;
+
+    &::after {
+      font-size: 14px;
+    }
+  }
+
+  .experience-content {
+    padding: 18px;
+  }
+
+  .position {
+    font-size: 15px;
+  }
+
+  .company {
+    font-size: 13px;
+  }
+
+  .duration {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .achievements li {
+    font-size: 12px;
+    line-height: 1.5;
   }
 }

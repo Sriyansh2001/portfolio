@@ -1,6 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import React, { useEffect, useRef, useState } from "react";
 import "./moving-modal.scss";
+import { WIDTH_BREAKPOINTS } from "constants/constants";
 
 interface MovingModalProps {
   open: boolean;
@@ -70,10 +71,19 @@ const MovingModal: React.FC<MovingModalProps> = ({
           onInteractOutside={(e) => e.preventDefault()}
           onMouseDown={onMouseDown}
           className="window-modal"
+          // style={{
+          //   width,
+          //   zIndex,
+          //   transform: `translate(${position.x}px, ${position.y}px)`,
+          // }}
           style={{
-            width,
+            width: window.innerWidth > WIDTH_BREAKPOINTS.TABLET ? width : "100vw",
+            height: window.innerWidth > WIDTH_BREAKPOINTS.TABLET ? "auto" : "100vh",
             zIndex,
-            transform: `translate(${position.x}px, ${position.y}px)`,
+            transform:
+              window.innerWidth > WIDTH_BREAKPOINTS.TABLET
+                ? `translate(${position.x}px, ${position.y}px)`
+                : "none",
           }}
         >
           {/* Title Bar (drag handle) */}

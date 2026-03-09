@@ -1,4 +1,12 @@
+@use "styles/variables" as *;
+
 .project-container {
     max-height: 500px;
     overflow: auto; 
+}
+
+@media (max-width: $tablet) {
+    .project-container {
+        max-height: none;
+    }
 }

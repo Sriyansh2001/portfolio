@@ -25,3 +25,13 @@
 .desktop-app-name {
     font-size: 12px;
 }
+
+// Tablet and smaller screens
+
+@media (max-width: $tablet) {
+  .desktop-main {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, 90px);
+    justify-content: center;
+  }
+}
