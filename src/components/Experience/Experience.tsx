@@ -21,7 +21,7 @@ const experienceData: ExperienceItem[] = [
   {
     position: 'Junior Associate Software Engineer',
     company: 'Unthinkable Solutions',
-    duration: 'Feb 2024 – Present',
+    duration: 'Feb 2024 – May 2025',
     achievements: [
       'Developed dynamic and responsive user interfaces using ReactJS and implemented complex state management solutions using Redux.',
       'Architected and integrated highly optimized server-side rendered (SSR) applications using Next.js, implementing dynamic data fetching, SEO best practices, code splitting, and caching strategies to enhance performance and scalability',
