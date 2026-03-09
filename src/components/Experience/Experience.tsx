@@ -12,7 +12,7 @@ const experienceData: ExperienceItem[] = [
   {
     position: 'SDE-1',
     company: 'Amazon',
-    duration: 'Feb 2024 – Present',
+    duration: 'May 2025 – Present',
     achievements: [
       'Designed and deployed serverless applications using AWS Lambda, SQS, and AWS CDK, improving scalability and reducing operational overhead',
       'Implemented secure and cost-efficient object storage with Amazon S3, enabling reliable file retrieval for millions of requests.'
