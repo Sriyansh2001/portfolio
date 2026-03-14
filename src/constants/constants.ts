@@ -10,7 +10,8 @@ export const DESKTOP_ICONS = {
     TERMINAL: "terminal",
     SKILLS: "skills",
     CONTACT: "contact",
-    CALCULATOR: "calculator"
+    CALCULATOR: "calculator",
+    CODING_PROFILES: "coding-profiles"
 }
 
 export const DESKTOP_ICON_NAME = {
@@ -25,7 +26,8 @@ export const DESKTOP_ICON_NAME = {
     [DESKTOP_ICONS.THEMES]: "Themes",
     [DESKTOP_ICONS.TERMINAL]: "Terminal",
     [DESKTOP_ICONS.CONTACT]: "Contact",
-    [DESKTOP_ICONS.CALCULATOR]: "Calculator"
+    [DESKTOP_ICONS.CALCULATOR]: "Calculator",
+    [DESKTOP_ICONS.CODING_PROFILES]: "Coding Profiles"
 }
 
 export const resumeLink =

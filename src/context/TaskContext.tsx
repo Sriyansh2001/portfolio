@@ -29,7 +29,8 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     [DESKTOP_ICONS.THEMES]: { isOpen: false, zIndex: 1 },
     [DESKTOP_ICONS.TERMINAL]: { isOpen: false, zIndex: 1 },
     [DESKTOP_ICONS.CONTACT]: { isOpen: false, zIndex: 1 },
-    [DESKTOP_ICONS.CALCULATOR]: { isOpen: false, zIndex: 1 }
+    [DESKTOP_ICONS.CALCULATOR]: { isOpen: false, zIndex: 1 },
+    [DESKTOP_ICONS.CODING_PROFILES]: { isOpen: false, zIndex: 1 }
   });
 
   const maxZIndexRef = useRef(1);

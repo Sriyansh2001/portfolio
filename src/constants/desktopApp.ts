@@ -16,7 +16,9 @@ import Project from "components/Project/Project";
 import Experience from "components/Experience/Experience";
 import Calculator from "components/Calculator/Calculator";
 import Terminal from "components/Terminal/Terminal";
+import { FaLaptopCode } from "react-icons/fa6";
 import { DESKTOP_ICON_NAME, DESKTOP_ICONS } from "./constants";
+import CodingProfiles from "components/CodingProfiles/CodingProfiles";
 
 export const DESKTOP_APPS = [
     // {
@@ -61,6 +63,12 @@ export const DESKTOP_APPS = [
       icon: GrUserExpert,
       width: 700,
       component: Experience
+    },
+    {
+      name: DESKTOP_ICON_NAME[DESKTOP_ICONS.CODING_PROFILES],
+      id: DESKTOP_ICONS.CODING_PROFILES,
+      icon: FaLaptopCode,
+      component: CodingProfiles
     },
     // {
     //   name: "Snake",

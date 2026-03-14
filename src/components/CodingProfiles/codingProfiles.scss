@@ -1,0 +1,44 @@
+.coding-profiles {
+  overflow: auto;
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .profile-info {
+      h3 {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      p {
+        font-size: 13px;
+        opacity: 0.7;
+        margin: 2px 0 0;
+      }
+    }
+  }
+}
