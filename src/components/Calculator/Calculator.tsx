@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './calculator.scss';
-import { MdDeleteOutline } from 'react-icons/md';
 
 export default function Calculator() {
   const [display, setDisplay] = useState('0');
